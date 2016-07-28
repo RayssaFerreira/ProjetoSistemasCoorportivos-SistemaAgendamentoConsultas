@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a9aa3912-42ab-4bd1-a88a-a1f0e4c23cc0">
+	<property name="ireport.zoom" value="1.1000000000000005"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="id" class="java.lang.String"/>
+	<field name="strData" class="java.lang.String"/>
+	<field name="horario" class="java.lang.String"/>
+	<field name="strMedico" class="java.lang.String"/>
+	<field name="strPaciente" class="java.lang.String"/>
+	<field name="observacao" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#009900" uuid="4aaec045-de9c-4b4f-934e-f94b0f651c29"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="5ee4f328-4aa4-4884-973e-476c21386bb1"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Consultas]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="a983d8f9-12fe-471e-856c-dbb6f916aff8"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Relatório por Data]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="496bc7c3-c019-4c02-b881-e80729648496"/>
+			</line>
+			<staticText>
+				<reportElement x="3" y="1" width="43" height="20" uuid="9b3e92af-29b1-476f-982c-f979b982ff57"/>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="0" width="100" height="20" uuid="1b2c9289-71af-45ca-8641-a6439f858027"/>
+				<text><![CDATA[Observação]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="145" y="1" width="100" height="20" uuid="4ca173cd-bc7c-4c90-a995-44451e3d7cbf"/>
+				<text><![CDATA[Horário]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="246" y="1" width="100" height="20" uuid="ce090818-cc3c-4b5d-813c-30977735fe5b"/>
+				<text><![CDATA[Médico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="345" y="1" width="100" height="20" uuid="c5f258cf-b7b9-448e-8416-5c6643772092"/>
+				<text><![CDATA[Paciente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="47" y="1" width="100" height="20" uuid="dc2e6896-c04b-4e57-ab10-723fe836edb5"/>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="d46e7056-ccd4-481b-82ad-9ce5582d8bc0"/>
+			</line>
+			<textField>
+				<reportElement x="3" y="0" width="43" height="20" uuid="93ed959f-9afd-424b-af69-5f178b971fe3"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="145" y="0" width="100" height="20" uuid="357b10eb-59de-43b7-a27d-607500c0dc3f"/>
+				<textFieldExpression><![CDATA[$F{horario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="246" y="0" width="100" height="20" uuid="656330fa-caa0-474c-8b92-2767eab7cd5c"/>
+				<textFieldExpression><![CDATA[$F{strMedico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="0" width="100" height="20" uuid="fb1c1845-e31d-4620-9302-226cbdb74c8c"/>
+				<textFieldExpression><![CDATA[$F{strPaciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="445" y="0" width="90" height="20" uuid="8bf4028b-6b73-45e5-9969-ec29af7b0802"/>
+				<textFieldExpression><![CDATA[$F{observacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="47" y="0" width="100" height="20" uuid="70fbcf5b-60d0-43d0-8da9-dc3850446bcb"/>
+				<textFieldExpression><![CDATA[$F{strData}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="aa12c277-5053-439a-8dac-5643f3b7af33"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="7fa402af-ea8f-4cd0-90de-f4728a69a1f2"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="839f2608-ed00-4c85-9d96-c81832c476b0"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

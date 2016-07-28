@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d04a1a6d-4fdc-47fa-aeab-a8d0b8cd02ad">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="quantidade" class="java.lang.Integer"/>
+	<field name="data" class="java.util.Date"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#72B472" uuid="4e06f7b7-7ab3-44d8-96f9-c883f71ace9d"/>
+				<staticText>
+					<reportElement x="20" y="20" width="452" height="43" forecolor="#FFFFFF" uuid="b84de1d6-191e-40dd-96a4-cf165c6521c2"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Sistema de Consultas]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="355" y="63" width="220" height="20" forecolor="#FFFFFF" uuid="24495ba4-b05c-4774-9a1d-70e44b3b87dd"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Gráfico de Consultas por Dia]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="b37a9b8c-2dab-4cd4-a695-40017d3d3c86"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="400">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="29c2f95b-87a0-418f-af2c-df5562fec37d"/>
+			</line>
+			<barChart>
+				<chart>
+					<reportElement x="0" y="34" width="555" height="333" uuid="f1419974-118d-440f-b6b5-08a8381ff9c8"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Consultas por dia"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{data}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{quantidade}]]></valueExpression>
+						<labelExpression><![CDATA[$F{data}.getDay() + "/" + $F{data}.getMonth() + "/" + $F{data}.getYear()]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="7aed2967-9f14-4c98-97ed-dfa6785e162f"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[" Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="71b13317-e907-4c12-a005-6ac600606ee0"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMM-yy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="31dbf71e-9bc0-4dd4-861e-636cffad6296"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
